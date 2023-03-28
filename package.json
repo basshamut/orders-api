@@ -1,7 +1,8 @@
 {
-  "name": "express-demo",
+  "name": "orders-api",
   "version": "1.0.0-SNAPSHOT",
-  "description": "Demo for express course",
+  "description": "Backoffice for Orders APP",
+  "author": "Wtysoftware",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,12 +12,7 @@
     "type": "git",
     "url": "git+ssh://git@gitlab.com/all-udemy-courses/curso-nodejs-2022-crea-tus-aplicaciones-restful/udemy-backend-node-express.git"
   },
-  "author": "Jesus Fajardo",
   "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/all-udemy-courses/curso-nodejs-2022-crea-tus-aplicaciones-restful/udemy-backend-node-express/issues"
-  },
-  "homepage": "https://gitlab.com/all-udemy-courses/curso-nodejs-2022-crea-tus-aplicaciones-restful/udemy-backend-node-express#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
