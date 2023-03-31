@@ -6,11 +6,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "nodemon --inspect ./app.js",
     "start": "node app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@gitlab.com/all-udemy-courses/curso-nodejs-2022-crea-tus-aplicaciones-restful/udemy-backend-node-express.git"
   },
   "license": "ISC",
   "dependencies": {

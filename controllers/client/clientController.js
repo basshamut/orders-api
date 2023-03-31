@@ -4,24 +4,6 @@ const clientsService = require('../../services/clients/clientsService')
 
 const router = express.Router()
 
-/**
- * @openapi
- * /api/clients:
- *   get:
- *     summary: Obtiene todos los clientes
- *     description: Retorna una lista de todos los clientes
- *     produces:
- *       - application/json
- *     tags:
- *       - clients
- *     responses:
- *       200:
- *         description: Lista de clientes
- *         schema:
- *           type: array
- *           items:
- *             $ref: '#/components/schemas/client'
- */
 router.get("/", function(request, response){
     response.setHeader('Content-Type', 'application/json')    
     response.status(200).send(JSON.stringify(clientsService.findAll()))

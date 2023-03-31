@@ -1,4 +1,4 @@
-const userRepository = require("../../persistance/mongo/repository/usersRepository")
+const userRepository = require("../../persistance/mongo/repository/userRepository")
 
 const userService = {}
 

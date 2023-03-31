@@ -1,4 +1,4 @@
-const userEntity = require("../entities/users")
+const userEntity = require("../entities/user")
 
 const userRepository = {}
 
