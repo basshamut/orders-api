@@ -12,6 +12,9 @@ const options = {
             {
                 url: "http://localhost:8080/",
             },
+            {
+                url: "https://orders-api-develop.up.railway.app/"
+            }
         ],
         basePath: '/',
         components: {
