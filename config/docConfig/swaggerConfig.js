@@ -1,8 +1,5 @@
 const swaggerJsdoc = require("swagger-jsdoc")
 
-/**
- * Opciones
- */
 const options = {
     swaggerDefinition: {
         openapi: "3.0.0",
@@ -18,20 +15,7 @@ const options = {
         ],
         basePath: '/',
         components: {
-            schemas: {
-                client: {
-                    type: 'object',
-                    require: [""],
-                    properties: {
-                        id: {
-                            type: "integer"
-                        },
-                        name: {
-                            type: "string"
-                        }
-                    }
-                }
-            }
+            schemas: {}
         }
     },
     apis: ['controllers/*/*.js']
