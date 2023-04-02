@@ -9,12 +9,16 @@ const orderSchema = new mongoose.Schema({
     _id: mongoose.Types.ObjectId,
     ownerId: mongoose.Types.ObjectId,
     clientId: mongoose.Types.ObjectId,
-    shippingPackaging: String,
-    items: [itemSchema],
+    containsBasket: {
+        type: Boolean,
+        default: true
+    },
+    observations: String,
     createAt :{
         type: Date,
         default: Date.now()
-    }
+    },
+    items: [itemSchema]
 }, {versionKey: false})
 
 const orderDocument = new mongoose.model("orders", orderSchema)

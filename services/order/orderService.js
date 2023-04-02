@@ -1,4 +1,5 @@
 const orderRepository = require('../../persistance/mongo/repository/orderRepository')
+const productRepository = require('../../persistance/mongo/repository/productRepository')
 
 const orderService = {}
 
@@ -18,13 +19,28 @@ orderService.findByOwnerId = function (id){
     return orderRepository.findByOwnerId(id)
 }
 orderService.save = async function (order){
-    const orderSearched = await orderRepository.findById(order._id)
-    if(!orderSearched){
-        const orderSaved = orderRepository.save(order)
-        console.log(orderSaved)
-        return orderSaved
+    const productsThatNotExist = []
+
+    for (const item of order.items) {
+        const itemSearched = await productRepository.findById(item.productId)
+        if(!itemSearched){
+            productsThatNotExist.push(item)
+        }
     }
-    return orderSearched
+
+    const orderResponse = {}
+
+    if(productsThatNotExist.length === 0){
+        orderResponse.orderInfo = await orderRepository.save(order)
+        orderResponse.itemsNotFound = []
+        return orderResponse
+    }
+
+
+    orderResponse.orderInfo = order
+    orderResponse.itemsNotFound = productsThatNotExist
+
+    return orderResponse
 }
 
 // orderService.update = function (client){

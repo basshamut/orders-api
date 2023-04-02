@@ -17,9 +17,9 @@ const port = process.env.PORT
 app.use(morgan('tiny'))
 app.use(express.json())
 
-app.use('/api/client', clientsController)
-app.use('/api/upload', uploaderController)
-app.use('/api/download', downloadController)
+app.use('/api/clients', clientsController)
+app.use('/api/uploads', uploaderController)
+app.use('/api/downloads', downloadController)
 app.use('/api/swagger', swaggerController)
 app.use('/api/users', usersController)
 app.use('/api/orders', orderController)

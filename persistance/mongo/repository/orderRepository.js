@@ -1,4 +1,5 @@
 const orderEntity = require("../entities/order")
+const mongoose = require('mongoose');
 
 const orderRepository = {}
 
@@ -50,8 +51,9 @@ orderRepository.findByClientId = async function (id) {
 }
 
 orderRepository.save = async function (order) {
-    const value = await orderEntity.insertMany(order)
-    return value
+    const ordersCollection = mongoose.connection.db.collection('orders')
+    const value = await ordersCollection.insertOne(order)
+    return orderRepository.findById(value.insertedId)
 }
 
 module.exports = orderRepository

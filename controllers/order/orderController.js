@@ -122,7 +122,7 @@ router.get("/owners/:id", async function(request, response){
 })
 
 /**
- * @swagger
+ * @openapi
  * /api/orders:
  *   post:
  *     summary: Crea un pedido.
@@ -143,9 +143,12 @@ router.get("/owners/:id", async function(request, response){
  *               clientId:
  *                 type: string
  *                 description: ID del cliente.
- *               shippingPackaging:
- *                 type: string
+ *               containsBasket:
+ *                 type: boolean
  *                 description: Define si el pedido tiene cesta o no.
+ *               observations:
+ *                  type: string
+ *                  description: Contiene las observaciones sobre el pedido.
  *               items:
  *                 type: array
  *                 description: Lista items del pedido.
