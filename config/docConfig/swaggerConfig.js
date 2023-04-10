@@ -8,6 +8,15 @@ const options = {
             description: 'Orders API basic documentation',
             version: '1.0.0'
         },
+        security: [{ bearerAuth: [] }],
+        securityDefinitions: {
+            bearerAuth: {
+                type: 'apiKey',
+                name: 'Authorization',
+                scheme: 'bearer',
+                in: 'header',
+            },
+        },
         servers: [
             {
                 url: "http://localhost:8080/",

@@ -1,6 +1,8 @@
 const express = require("express")
 const { check, validationResult } = require("express-validator")
+
 const orderService = require('../../services/order/orderService')
+const errorHandler = require('../../utils/errorHandler')
 
 const router = express.Router()
 
@@ -168,6 +170,12 @@ router.get("/owners/:id", async function(request, response){
  *         description: Datos de entrada incorrectos.
  */
 router.post('/', async (request, response) => {
+    const jwtHandlerResponse = await errorHandler.jwtHandler(request, response)
+
+    if (jwtHandlerResponse) {
+        return jwtHandlerResponse
+    }
+
     response.setHeader('Content-Type', 'application/json')
     const order = await orderService.save(request.body)
     response.status(201).send(order)
