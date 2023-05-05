@@ -180,7 +180,7 @@ router.post('/', async (request, response) => {
     const order = await orderService.save(request.body)
 
     if(order.itemsNotFound.length >0){
-        return response.status(404).send(order)
+        return response.status(400).send(order)
     }
 
     return response.status(201).send(order)
