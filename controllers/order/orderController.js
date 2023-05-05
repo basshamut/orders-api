@@ -178,7 +178,12 @@ router.post('/', async (request, response) => {
 
     response.setHeader('Content-Type', 'application/json')
     const order = await orderService.save(request.body)
-    response.status(201).send(order)
+
+    if(order.itemsNotFound.length >0){
+        return response.status(404).send(order)
+    }
+
+    return response.status(201).send(order)
 })
 
 // router.put('/:id', [
