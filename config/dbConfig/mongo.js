@@ -13,6 +13,9 @@ const dbConnect = () => {
         .catch(() => {
             console.error("*** Connection failure ***")
         })
+        .finally(() =>{
+            console.log("DB_URI => " + DB_URI)
+        })
 }
 
 mongoConnection.connect = dbConnect

@@ -1,4 +1,4 @@
-const jwtTool = require('../utils/jwtTool')
+const jwtTool = require('./jwtTool')
 
 const errorHandler = {}
 
