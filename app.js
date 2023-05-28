@@ -3,6 +3,7 @@ require("./config/dbConfig/mongo").connect()
 
 const express = require("express")
 const morgan = require("morgan")
+const cors = require('cors');
 
 const clientsController = require('./controllers/client/clientController')
 const uploaderController = require('./controllers/uploader/uploaderController')
@@ -15,7 +16,13 @@ const loginController = require('./controllers/login/loginController')
 
 const app = express()
 const port = process.env.PORT
+const corsOptions = {
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+};
 
+app.use(cors(corsOptions));
 app.use(morgan('tiny'))
 app.use(express.json())
 
