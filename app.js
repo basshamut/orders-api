@@ -1,18 +1,18 @@
 require('dotenv').config();
-require("./config/dbConfig/mongo").connect()
+require("./src/config/dbConfig/mongo").connect()
 
 const express = require("express")
 const morgan = require("morgan")
 const cors = require('cors');
 
-const clientsController = require('./controllers/client/clientController')
-const uploaderController = require('./controllers/uploader/uploaderController')
-const downloadController = require('./controllers/uploader/downloadController')
-const swaggerController = require('./controllers/swagger/swaggerController')
-const usersController = require('./controllers/user/userController')
-const orderController = require('./controllers/order/orderController')
-const ownerController = require('./controllers/owner/ownerController')
-const loginController = require('./controllers/login/loginController')
+const clientsController = require('./src/controllers/client/clientController')
+const uploaderController = require('./src/controllers/uploader/uploaderController')
+const downloadController = require('./src/controllers/uploader/downloadController')
+const swaggerController = require('./src/controllers/swagger/swaggerController')
+const usersController = require('./src/controllers/user/userController')
+const orderController = require('./src/controllers/order/orderController')
+const ownerController = require('./src/controllers/owner/ownerController')
+const loginController = require('./src/controllers/login/loginController')
 
 const app = express()
 const port = process.env.PORT

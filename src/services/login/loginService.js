@@ -1,5 +1,5 @@
 const encrypterTool = require('../../utils/encrypterTool')
-const ownerService = require('../../services/owner/ownerService')
+const ownerService = require('../owner/ownerService')
 
 const loginService = {}
 
